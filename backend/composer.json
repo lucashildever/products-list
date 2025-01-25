@@ -1,0 +1,11 @@
+{
+    "name": "products-list/backend",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "ProductsList\\Backend\\": "src/"
+        }
+    },
+    "minimum-stability": "stable",
+    "require": {}
+}
