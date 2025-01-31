@@ -3,9 +3,11 @@
     "type": "project",
     "autoload": {
         "psr-4": {
-            "ProductsList\\Backend\\": "src/"
+            "Src\\": "src/"
         }
     },
     "minimum-stability": "stable",
-    "require": {}
+    "require": {
+        "vlucas/phpdotenv": "^5.6"
+    }
 }
