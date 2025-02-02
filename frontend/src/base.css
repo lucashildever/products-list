@@ -25,6 +25,8 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	padding-right: 5%;
+	padding-left: 5%;
 }
 ol, ul {
 	list-style: none;
@@ -40,4 +42,12 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+}
+
+/* regular */
+ul {
+	font-family: "Raleway", serif;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
 }
