@@ -1,63 +1,66 @@
-import styled from 'styled-components';
-import logo from '/logo.svg';
-import cartIcon from '/cart.svg';
 import { useState } from 'react';
+import styled from 'styled-components';
+
+import CartButton from './CartButton';
+import CartOverlay from './CartOverlay';
+
+import logo from '/logo.svg';
 
 const Header = () => {
 
     const [active, setActive] = useState<string>('women');
 
-    const handleActive = (navOption: string): string => {
-        setActive(navOption);
-        return active;
-    }
-
     return (
-        <StyledHeader>
-            <ul>
-                <li
-                    onClick={() => handleActive('women')}
-                    className={active === 'women' ? 'active' : ''}
-                >
-                    <span>Women</span>
-                </li>
-                <li
-                    onClick={() => handleActive('men')}
-                    className={active === 'men' ? 'active' : ''}
-                >
-                    <span>Men</span>
-                </li>
-                <li
-                    onClick={() => handleActive('kid')}
-                    className={active === 'kid' ? 'active' : ''}
-                >
-                    <span>Kid</span>
-                </li>
-            </ul>
-            <img src={logo} alt="logo" />
-            <img src={cartIcon} alt="cart icon" />
-        </StyledHeader>
+        <>
+            <StyledHeader>
+                <ul>
+                    <li
+                        onClick={() => setActive('women')}
+                        className={active === 'women' ? 'active' : ''}
+                        data-testid={active === 'women' ? 'active-category-link' : 'category-link'}
+                    >
+                        <span>Women</span>
+                    </li>
+                    <li
+                        onClick={() => setActive('men')}
+                        className={active === 'men' ? 'active' : ''}
+                        data-testid={active === 'men' ? 'active-category-link' : 'category-link'}
+                    >
+                        <span>Men</span>
+                    </li>
+                    <li
+                        onClick={() => setActive('kid')}
+                        className={active === 'kid' ? 'active' : ''}
+                        data-testid={active === 'kid' ? 'active-category-link' : 'category-link'}
+                    >
+                        <span>Kid</span>
+                    </li>
+                </ul>
+                <img src={logo} alt="logo" />
+                <CartButton />
+            </StyledHeader>
+            <CartOverlay />
+        </>
     );
-}
+};
 
 const StyledHeader = styled.header`
+    position: fixed;
+    top: 0;
+    width: 80%;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding-top: 17px;
-    padding-bottom: 17px;
-    position: relative;
+    height: 70px;
+    background-color: white;
+    /* padding-top: 17px;
+    padding-bottom: 17px; */
 
     img[alt="logo"] {
         position: absolute;
         height: 35px;
         left: 50%;
         transform: translateX(-50%);
-    }
-
-    img:nth-of-type(2) {
-        height: 23px;
     }
 
     ul {
@@ -69,8 +72,8 @@ const StyledHeader = styled.header`
 
             // middle link spacing
             &:nth-child(2) {
-                padding-left: 15px;
-                padding-right: 15px;
+                margin-left: 15px;
+                margin-right: 15px;
             }
 
             &:after {
@@ -88,6 +91,7 @@ const StyledHeader = styled.header`
             &.active {
                 color : #5ECE7B;
                 &:after { opacity: 1; }
+                font-weight: 600;
             }
         }
     }
