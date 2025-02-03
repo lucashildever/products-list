@@ -1,7 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 import Layout from './components/Layout';
-import ProductDetails from './components/pages/product-details';
-import ProductsListing from './components/pages/products-listing';
+import ProductDetails from './components/pages/ProductDetails';
+import ProductsListing from './components/pages/ProductsListing';
 
 const router = createBrowserRouter([
    {
@@ -18,6 +18,6 @@ const router = createBrowserRouter([
             }
         ]
     }
-])
+]);
 
 export default router;
