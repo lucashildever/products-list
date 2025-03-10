@@ -1,19 +1,19 @@
 export enum HeaderCategory {
-    ALL,
-    CLOTHES,
-    TECH,
-};
+    ALL = 'all',
+    CLOTHES = 'clothes',
+    TECH = 'tech',
+}
 
-export interface IState {
+export interface HeaderState {
     isCartOpen: boolean;
-    selectedCategory: HeaderCategory
-};
+    selectedCategory: HeaderCategory;
+}
 
-export type ActionType =
-  | { type: 'TOGGLE_CART' }
-  | { type: 'CATEGORY_CLICK'; payload: HeaderCategory };
+export type HeaderAction =
+    | { type: 'TOGGLE_CART' }
+    | { type: 'CATEGORY_CLICK'; payload: HeaderCategory };
 
-export interface IHeaderContext {
-    state: IState;
-    dispatch: React.Dispatch<ActionType>;
-};
+export interface HeaderContext {
+    state: HeaderState;
+    dispatch: React.Dispatch<HeaderAction>;
+}
