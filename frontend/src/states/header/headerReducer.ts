@@ -1,6 +1,6 @@
-import { IState, ActionType } from '../types/headerTypes';
+import { HeaderState, HeaderAction } from '../../types/headerTypes';
 
-export const headerReducer = (state: IState, action: ActionType) => {
+const headerReducer = (state: HeaderState, action: HeaderAction) => {
     switch (action.type) {
         case 'TOGGLE_CART':
             return {
@@ -15,4 +15,6 @@ export const headerReducer = (state: IState, action: ActionType) => {
         default:
             return state;
     }
-}
+};
+
+export default headerReducer;
