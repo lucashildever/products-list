@@ -1,10 +1,10 @@
 <?php
 
-namespace Src\Api\Types;
+namespace App\Api\Types;
 
 use GraphQL\Type\Definition\EnumType;
 
-class Category extends EnumType {
+class CategoryType extends EnumType {
 
     private const CLOTHES = 'clothes';
     private const TECH = 'tech';

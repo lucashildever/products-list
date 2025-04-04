@@ -1,6 +1,6 @@
 <?php
 
-namespace Src\Api\Types;
+namespace App\Api\Types;
 
 final class TypeRegistry {
     private static array $types = [];

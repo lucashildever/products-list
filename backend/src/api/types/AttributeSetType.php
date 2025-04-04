@@ -1,13 +1,13 @@
 <?php
 
-namespace Src\Api\Types;
+namespace App\Api\Types;
 
 use GraphQL\Type\Definition\ObjectType;
 use GraphQL\Type\Definition\Type;
-use Src\Api\Types\TypeRegistry;
-use Src\Api\Types\Attribute;
+use App\Api\Types\TypeRegistry;
+use App\Api\Types\AttributeType;
 
-class AttributeSet extends ObjectType {
+class AttributeSetType extends ObjectType {
     public function __construct() {
         parent::__construct([
             'name' => 'attributeSet',
@@ -15,7 +15,7 @@ class AttributeSet extends ObjectType {
                 'id' => Type::id(),
                 'name' => Type::string(),
                 'type' => Type::string(),
-                'items' => Type::listOf(TypeRegistry::type(Attribute::class))
+                'items' => Type::listOf(TypeRegistry::type(AttributeType::class))
             ]
         ]);
     }

@@ -1,19 +1,19 @@
 <?php
 
-namespace Src\Api\Types;
+namespace App\Api\Types;
 
 use GraphQL\Type\Definition\ObjectType;
 use GraphQL\Type\Definition\Type;
-use Src\Api\Types\TypeRegistry;
-use Src\Api\Types\Currency;
+use App\Api\Types\TypeRegistry;
+use App\Api\Types\CurrencyType;
 
-class Price extends ObjectType {
+class PriceType extends ObjectType {
     public function __construct() {
         parent::__construct([
             'name' => 'price',
             'fields' => [
                 'amount' => Type::float(),
-                'currency' => TypeRegistry::type(Currency::class),
+                'currency' => TypeRegistry::type(CurrencyType::class),
             ]
         ]);
     }

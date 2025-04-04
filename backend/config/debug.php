@@ -3,7 +3,6 @@
 $environment = $_ENV['ENVIRONMENT'];
 
 if ($environment === 'development') {
-    
     error_reporting(E_ALL);
     ini_set('display_errors', 1);
 } else {

@@ -1,11 +1,11 @@
 <?php
 
-namespace Src\Api\Types;
+namespace App\Api\Types;
 
 use GraphQL\Type\Definition\ObjectType;
 use GraphQL\Type\Definition\Type;
 
-class Currency extends ObjectType {
+class CurrencyType extends ObjectType {
     public function __construct() {
         parent::__construct([
             'name' => 'currency',
