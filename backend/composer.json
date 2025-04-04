@@ -1,13 +1,15 @@
 {
-    "name": "products-list/backend",
-    "type": "project",
-    "autoload": {
-        "psr-4": {
-            "Src\\": "src/"
-        }
-    },
-    "minimum-stability": "stable",
-    "require": {
-        "vlucas/phpdotenv": "^5.6"
+  "name": "products-list/backend",
+  "type": "project",
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/"
     }
+  },
+  "minimum-stability": "stable",
+  "require": {
+    "vlucas/phpdotenv": "^5.6",
+    "webonyx/graphql-php": "^15.19",
+    "nikic/fast-route": "^1.3"
+  }
 }
